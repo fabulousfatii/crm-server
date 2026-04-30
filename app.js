@@ -14,7 +14,7 @@ const cors = require("cors")
 
 
 
-const allowedorigins= ["http://localhost:5173"]
+const allowedorigins= [process.env.FRONTEND_URL,process.env.FRONT_END_URL]
 connectdb()
 app.use(express.json());
 
