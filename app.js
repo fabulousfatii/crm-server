@@ -14,7 +14,12 @@ const cors = require("cors")
 
 
 
-const allowedorigins= [process.env.FRONT_END_URL, process.env.FRONTEND_URL]
+// const allowedorigins= [process.env.FRONT_END_URL, process.env.FRONTEND_URL]
+const allowedorigins = [
+  "http://localhost:5173",
+  // "https://crm-client-delta.vercel.app",
+];
+
 connectdb()
 app.use(express.json());
 
