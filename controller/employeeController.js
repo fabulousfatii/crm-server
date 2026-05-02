@@ -114,7 +114,7 @@ const getLoginEmployee = async (req, res) => {
     try {
         const userId = req.userId;
         
-        const user = await employees.findById(userId) || await Admin.findById(userId);
+        const user = await Admin.findById(userId) || await  employees.findById(userId)
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
