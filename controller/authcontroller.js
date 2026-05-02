@@ -65,7 +65,7 @@ const login = async(req,res)=>{
             return res.status(400).json({ message: "Please fill all fields" });   
         }
 
-        const user;
+        let user;
         if( email === "admin@example.com") {
                         user= await admin.findOne({ email });}
 
