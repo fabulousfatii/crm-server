@@ -7,7 +7,7 @@ const authenticateToken = require("../middleware/authuser")
 // Define your routes here
 
 router.get('/employees',getEmployeedata);
-router.get('/employeedata',getLoginEmployee);
+router.post('/employeedata',getLoginEmployee);
 router.post('/employees',newEmployee);
 router.put('/employees/:_id',updateEmployee); // also for leave update
 router.post('/employees/leave/:_id',addLeaveToEmployee);
