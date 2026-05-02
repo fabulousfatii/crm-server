@@ -64,7 +64,14 @@ const login = async(req,res)=>{
         if (!email || !password) {
             return res.status(400).json({ message: "Please fill all fields" });   
         }
-       const user = await userModel.findOne({ email }) || await admin.findOne({ email });
+
+        const user;
+        if( email === "admin@example.com") {
+                        user= await admin.findOne({ email });}
+
+        else {
+                        user = await userModel.findOne({ email }) }
+
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
